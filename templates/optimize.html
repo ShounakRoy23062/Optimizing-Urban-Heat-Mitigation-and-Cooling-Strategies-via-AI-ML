@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Budget Optimization</title>
+
+    <link rel="stylesheet" href="/static/optimize.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>THERMO-ISRO</h1>
+
+    <nav>
+        <a href="/">Dashboard</a>
+        <a href="/causal">Causal AI</a>
+        <a href="/simulate">Simulation</a>
+        <a href="/optimize">Optimization</a>
+    </nav>
+
+</header>
+
+<div class="page-container">
+
+    <h2>Pareto Budget Optimization</h2>
+
+    <div class="budget-control">
+
+        <label>
+            Budget (Lakhs INR)
+        </label>
+
+        <input
+            type="range"
+            id="budgetSlider"
+            min="1"
+            max="20"
+            value="5">
+
+    </div>
+
+    <canvas id="paretoChart"></canvas>
+
+    <div id="paretoTable"></div>
+
+</div>
+
+<script defer src="/static/js/api.js"></script>
+<script defer src="/static/js/optimize.js"></script>
+
+</body>
+</html>

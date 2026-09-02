@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>THERMO-ISRO Dashboard</title>
+
+    <link rel="stylesheet" href="/static/dashboard.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.5.0/mapbox-gl.css" rel="stylesheet">
+    <script defer src="https://api.mapbox.com/mapbox-gl-js/v3.5.0/mapbox-gl.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>THERMO-ISRO</h1>
+
+    <nav>
+        <a href="/">Dashboard</a>
+        <a href="/causal">Causal AI</a>
+        <a href="/simulate">Simulation</a>
+        <a href="/optimize">Optimization</a>
+    </nav>
+</header>
+
+<div id="systemTicker">
+THERMO-ISRO ONLINE
+</div>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+
+        <div class="card">
+            <h3>Peak LST</h3>
+            <h1>47.8°C</h1>
+        </div>
+
+        <div class="card">
+            <h3>Heat Risk Zones</h3>
+            <h1>14</h1>
+        </div>
+
+        <canvas id="forecastChart"></canvas>
+
+    </aside>
+
+    <main>
+
+        <div id="map"></div>
+
+        <div id="zoneTooltip" class="zone-tooltip">
+            <h3 id="ztName">Zone</h3>
+        </div>
+
+    </main>
+
+    <aside class="right-panel">
+
+        <h3>Top Heat Drivers</h3>
+
+        <canvas id="causalBarChart"></canvas>
+
+        <div id="equityList"></div>
+
+    </aside>
+
+</div>
+
+<script defer src="/static/js/api.js"></script>
+<script defer src="/static/js/map.js"></script>
+<script defer src="/static/js/charts.js"></script>
+<script defer src="/static/js/effect.js"></script>
+
+</body>
+</html>

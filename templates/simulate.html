@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Intervention Simulator</title>
+
+    <link rel="stylesheet" href="/static/simulate.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+    <h1>THERMO-ISRO</h1>
+
+    <nav>
+        <a href="/">Dashboard</a>
+        <a href="/causal">Causal AI</a>
+        <a href="/simulate">Simulation</a>
+        <a href="/optimize">Optimization</a>
+    </nav>
+</header>
+
+<div class="page-container">
+
+    <h2>Intervention Simulation</h2>
+
+    <div class="sim-controls">
+
+        <label>
+            Cool Roofs
+            <span id="valCoolRoof">50%</span>
+        </label>
+
+        <input
+            type="range"
+            id="sliderCoolRoof"
+            min="0"
+            max="100"
+            value="50">
+
+        <label>
+            Tree Canopy
+            <span id="valTreeCanopy">50%</span>
+        </label>
+
+        <input
+            type="range"
+            id="sliderTreeCanopy"
+            min="0"
+            max="100"
+            value="50">
+
+        <label>
+            Permeable Pavements
+            <span id="valPavements">50%</span>
+        </label>
+
+        <input
+            type="range"
+            id="sliderPavements"
+            min="0"
+            max="100"
+            value="50">
+
+        <button id="runSimBtn">
+            Run Simulation
+        </button>
+
+    </div>
+
+    <div class="sim-results">
+
+        <div class="metric">
+            <h3>Temperature Drop</h3>
+            <h1 id="simTempDrop">0</h1>
+        </div>
+
+        <div class="metric">
+            <h3>Cost</h3>
+            <h1 id="simCost">₹0</h1>
+        </div>
+
+        <div class="metric">
+            <h3>Population Benefited</h3>
+            <h1 id="simPop">0</h1>
+        </div>
+
+    </div>
+
+    <canvas id="simChart"></canvas>
+
+</div>
+
+<script defer src="/static/js/api.js"></script>
+<script defer src="/static/js/simulate.js"></script>
+
+</body>
+</html>
