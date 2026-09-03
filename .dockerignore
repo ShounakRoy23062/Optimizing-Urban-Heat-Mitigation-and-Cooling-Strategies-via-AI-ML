@@ -1,0 +1,30 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.isro/
+.env/
+
+# Git files
+.git/
+.gitignore
+
+# VS Code settings
+.vscode/
+
+# Environment files
+.env
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker files not needed in image
+docker-compose.yml
