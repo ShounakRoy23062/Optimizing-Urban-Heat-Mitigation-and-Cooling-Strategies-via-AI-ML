@@ -22,12 +22,16 @@ const THREAT_ZONES = [
 }
 ];
 
-function initializeMap() {
+async function initializeMap() {
 
     if (!document.getElementById("map"))
         return;
 
-    mapboxgl.accessToken = "YOUR_MAPBOX_TOKEN";
+    const response = await fetch("/api/mapbox-token");
+    const data = await response.json();
+
+    mapboxgl.accessToken = data.token;
+
     const map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/mapbox/dark-v11",

@@ -1,7 +1,14 @@
 from flask import Flask, render_template, jsonify, request
+from dotenv import load_dotenv
+import os
+
+# ==========================================
+# LOAD ENVIRONMENT VARIABLES
+# ==========================================
+
+load_dotenv()
 
 app = Flask(__name__)
-
 
 # ==========================================
 # PAGE ROUTES
@@ -28,7 +35,19 @@ def optimize():
 
 
 # ==========================================
-# API ROUTES
+# MAPBOX TOKEN API
+# ==========================================
+
+@app.route("/api/mapbox-token")
+def get_mapbox_token():
+
+    return jsonify({
+        "token": os.getenv("MAPBOX_TOKEN")
+    })
+
+
+# ==========================================
+# PREDICTION API
 # ==========================================
 
 @app.route("/api/predict")
@@ -40,6 +59,10 @@ def predict():
         "forecast": [46, 47, 48, 49, 48, 47, 46]
     })
 
+
+# ==========================================
+# CAUSAL ANALYSIS API
+# ==========================================
 
 @app.route("/api/causal")
 def causal_analysis():
@@ -65,6 +88,10 @@ def causal_analysis():
         ]
     })
 
+
+# ==========================================
+# SIMULATION API
+# ==========================================
 
 @app.route("/api/simulate", methods=["POST"])
 def run_simulation():
@@ -107,6 +134,10 @@ def run_simulation():
             "error": str(error)
         }), 400
 
+
+# ==========================================
+# OPTIMIZATION API
+# ==========================================
 
 @app.route("/api/optimize")
 def optimize_budget():
