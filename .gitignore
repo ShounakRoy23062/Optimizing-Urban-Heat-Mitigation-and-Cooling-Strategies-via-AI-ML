@@ -1,7 +1,12 @@
 __pycache__/
 *.pyc
+
 .env
-.vscode/
-.isro/
-venv/
 .env/
+
+.vscode/
+
+venv/
+.venv/
+
+.isro/
